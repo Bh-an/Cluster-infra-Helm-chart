@@ -18,20 +18,20 @@ dependencies:
     version: x.x.x
     repository: "https://charts.bitnami.com/bitnami"
 
-  - name: elasticsearch
-    version: x.x.x
-    repository: "https://charts.bitnami.com/bitnami"
+  # - name: elasticsearch
+  #   version: x.x.x
+  #   repository: "https://charts.bitnami.com/bitnami"
 
-  - name: grafana
-    version: x.x.x
-    repository: "https://charts.bitnami.com/bitnami"
+  # - name: grafana
+  #   version: x.x.x
+  #   repository: "https://charts.bitnami.com/bitnami"
 
-  - name: prometheus-kafka-exporter
+  - name: kube-prometheus-stack
     version: x.x.x
     repository: "https://prometheus-community.github.io/helm-charts"
 
-  - name: zookeeper
-    condition: zookeeper.enabled
-    repository: "file://subcharts/zookeeper"
-    version: 0.1.0
+  # - name: zookeeper
+  #   condition: zookeeper.enabled
+  #   repository: "https://charts.bitnami.com/bitnami"
+  #   version: 0.1.0
 
