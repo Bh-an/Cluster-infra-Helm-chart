@@ -13,10 +13,15 @@ helm install infra-helm -f Values.yaml .
 helm uninstall infra-helm
 ```
 
-- Expose Prometheus
+- Open Prometheus
 ```
-kubectl expose service infra-helm-prometheus-server --type=NodePort --target-port=9090 --name=infra-helm-prometheus
-minikube service infra-helm-prometheus
+kubectl port-forward prometheus-infra-helm-kube-prometheus-prometheus-0 9090
+```
+
+- Open Grafana Dashboard (go to 127.0.0.1)
+```
+kubectl port-forward <grafana-pod> 3000
+kubectl get secret infra-helm-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
 
 - Kafka Explorarizatioin

@@ -20,19 +20,19 @@ kafka:
       nodePorts:
         - 30123
 
-elasticsearch:
-  master:
-    replicaCount: 2
+# elasticsearch:
+#   master:
+#     replicaCount: 2
 
-prometheus:
-  kafka:
-    enabled: true
+# prometheus:
+#   kafka:
+#     enabled: true
 
-grafana:
-  metrics:
-    enabled: true
-    service:
-      annotations:
-        prometheus.io/scrape: "true"
-        prometheus.io/port: "3000"
-        prometheus.io/path: "/metrics"
+# grafana:
+#   metrics:
+#     enabled: true
+#     service:
+#       annotations:
+#         prometheus.io/scrape: "true"
+#         prometheus.io/port: "3000"
+#         prometheus.io/path: "/metrics"

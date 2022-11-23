@@ -2,8 +2,11 @@ dependencies:
 - name: kafka
   repository: https://charts.bitnami.com/bitnami
   version: 19.0.0
-- name: prometheus-kafka-exporter
+- name: metrics-server
+  repository: https://charts.bitnami.com/bitnami
+  version: 6.2.3
+- name: kube-prometheus-stack
   repository: https://prometheus-community.github.io/helm-charts
-  version: 1.7.0
-digest: sha256:d8d3d800ddf563636e388c82f77a49e711987f58ba2277a6109c5a0169a80f83
-generated: "2022-11-22T19:06:27.025979794-05:00"
+  version: 42.0.0
+digest: sha256:dbc8887849fa87d6a8a19c8f5f73fdaf41bf15fe2a09beac7008ba320238974c
+generated: "2022-11-23T18:12:49.923003683-05:00"
