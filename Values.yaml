@@ -1,0 +1,38 @@
+kafka:
+  replicaCount: 1
+  zookeeper:
+    replicaCount: 1
+  provisioning:
+    topics:
+      - name: topic1
+        partitions: 2
+        replicationFactor: 1
+        config:
+          max.message.bytes: 64000
+          flush.messages: 1
+  metrics:
+    kafka:
+      enabled: true
+  externalAccess:
+    enabled: true
+    service:
+      type: NodePort
+      nodePorts:
+        - 30123
+
+elasticsearch:
+  master:
+    replicaCount: 2
+
+prometheus:
+  kafka:
+    enabled: true
+
+grafana:
+  metrics:
+    enabled: true
+    service:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "3000"
+        prometheus.io/path: "/metrics"
