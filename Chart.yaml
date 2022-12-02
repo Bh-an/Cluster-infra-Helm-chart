@@ -5,33 +5,25 @@ description: A Helm chart for Kubernetes
 
 type: application
 
-version: 0.1.0
+version: 1.1.0
 
-appVersion: 1.16.0
+appVersion: 1.1.0
 
 dependencies:
-  - name: kafka
-    version: 19.0.0
-    repository: "https://charts.bitnami.com/bitnami"
+  # - name: kafka
+  #   version: x.x.x
+  #   repository: "https://ricardo-aires.github.io/helm-charts"
 
+  - name: elasticsearch
+    version: x.x.x
+    repository: "https://charts.bitnami.com/bitnami"
+    
   - name: metrics-server
     version: x.x.x
     repository: "https://charts.bitnami.com/bitnami"
-
-  # - name: elasticsearch
-  #   version: x.x.x
-  #   repository: "https://charts.bitnami.com/bitnami"
-
-  # - name: grafana
-  #   version: x.x.x
-  #   repository: "https://charts.bitnami.com/bitnami"
 
   - name: kube-prometheus-stack
     version: x.x.x
     repository: "https://prometheus-community.github.io/helm-charts"
 
-  # - name: zookeeper
-  #   condition: zookeeper.enabled
-  #   repository: "https://charts.bitnami.com/bitnami"
-  #   version: 0.1.0
 
