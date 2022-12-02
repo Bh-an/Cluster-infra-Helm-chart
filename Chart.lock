@@ -1,12 +1,12 @@
 dependencies:
-- name: kafka
+- name: elasticsearch
   repository: https://charts.bitnami.com/bitnami
-  version: 19.0.0
+  version: 19.5.4
 - name: metrics-server
   repository: https://charts.bitnami.com/bitnami
-  version: 6.2.3
+  version: 6.2.4
 - name: kube-prometheus-stack
   repository: https://prometheus-community.github.io/helm-charts
-  version: 42.0.0
-digest: sha256:dbc8887849fa87d6a8a19c8f5f73fdaf41bf15fe2a09beac7008ba320238974c
-generated: "2022-11-23T18:12:49.923003683-05:00"
+  version: 42.1.1
+digest: sha256:6be6854887cfb1a5e114ce951931c57b59762658277625baf833fac51ced346e
+generated: "2022-12-02T10:39:10.087227314-05:00"
