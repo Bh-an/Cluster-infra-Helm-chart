@@ -70,6 +70,12 @@ elasticsearch:
     replicas: 2
   namespaceOverride: elasticsearch
 
+kube-prometheus-stack:
+  namespaceOverride: metrics1
+
+metrics-server:
+  namespaceOverride: metrics1
+
 
 
 # prometheus:
