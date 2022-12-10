@@ -24,16 +24,14 @@ kubectl port-forward <grafana-pod> 3000
 kubectl get secret infra-helm-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
 
-- Kafka Explorarizatioin
+- Kafka Configuration
+
+# ssh into the pod:
+kubectl exec -it kafka-cli -n kafka -- bash
 ```
-kafkacat -b 192.168.58.2:30123 -t topic1 -L
+```bash
+# create a new topic
+./bin/kafka-topics.sh --create --zookeeper zookeeper-svc:2181 --replication-factor 1 --partitions 2 --topic tasks
 
-echo "Am I receiving this message?" | kafkacat -P -b 192.168.58.2:30123 -t topic1
-kafkacat -b 192.168.58.2:30123 -t topic1 -P test
 
-kubectl exec -it infra-helm-kafka-0 -- bash
-
-kafkacat -b 192.168.58.2:30123 -t topic1
-kafkacat -b 192.168.58.2:30123 -t topic1 -C
-kafkacat -b 192.168.58.2:30123 -L
 ```

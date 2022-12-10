@@ -14,10 +14,14 @@ dependencies:
   #   version: x.x.x
   #   repository: "https://ricardo-aires.github.io/helm-charts"
 
+  # - name: elasticsearch
+  #   version: x.x.x
+  #   repository: "https://charts.bitnami.com/bitnami"
+
   - name: elasticsearch
-    version: x.x.x
-    repository: "https://charts.bitnami.com/bitnami"
-    
+    version: 7.9.3
+    repository: https://helm.elastic.co
+      
   - name: metrics-server
     version: x.x.x
     repository: "https://charts.bitnami.com/bitnami"
