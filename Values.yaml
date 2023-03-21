@@ -66,15 +66,45 @@ tolerations: []
 affinity: {}
 
 elasticsearch:
-  master:
-    replicas: 2
+
   namespaceOverride: elasticsearch
+  replicas: 1
+  minimumMasterNodes: 1
+  clusterHealthCheckParams: "wait_for_status=green&timeout=60s"
+  esJavaOpts: "-Xmx1g -Xms1g"
+
+  resources:
+    requests:
+      cpu: "550m"
+      memory: "1Gi"
+    limits:
+      cpu: "1000m"
+      memory: "2Gi"
+
+  podManagementPolicy: "Parallel"
+
+  # This is the max unavailable setting for the pod disruption budget
+  # The default value of 1 will make sure that kubernetes won't allow more than 1
+  # of your pods to be unavailable during maintenance
+  maxUnavailable: 1
+
+  readinessProbe:
+    initialDelaySeconds: 15
+    periodSeconds: 10
+    timeoutSeconds: 5
+    successThreshold: 1
+    failureThreshold: 3
+
+# elasticsearch:
+#   master:
+#     replicas: 1
+#   namespaceOverride: elasticsearch
 
 kube-prometheus-stack:
-  namespaceOverride: metrics1
+  namespaceOverride: metric
 
 metrics-server:
-  namespaceOverride: metrics1
+  namespaceOverride: metric
 
 
 
