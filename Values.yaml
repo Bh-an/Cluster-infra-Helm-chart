@@ -1,27 +1,5 @@
 
 
-# kafka:
-#   replicaCount: 1
-  # zookeeper:
-  #   replicaCount: 1
-#   provisioning:
-#     topics:
-#       - name: topic1
-#         partitions: 2
-#         replicationFactor: 1
-  #       config:
-  #         max.message.bytes: 64000
-  #         flush.messages: 1
-  # metrics:
-  #   kafka:
-  #     enabled: true
-  # externalAccess:
-  #   enabled: true
-  #   service:
-  #     type: NodePort
-  #     nodePorts:
-  #       - 30123
-
 replicaCount: 1
 configMapDir: {}
 
