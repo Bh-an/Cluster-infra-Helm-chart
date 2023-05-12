@@ -57,7 +57,7 @@ Forward port proxy:
 ```
 kubectl proxy 
 ```
-Get token for admin account (please understand what you're doing, this helmchart is only recommended for small team projects in terms of security):
+Get token for admin account (please understand what you're doing, this helmchart is only recommended for small non-commercial team projects in terms of security):
 ```
 kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep kube-admin | awk '{print $1}')
 
